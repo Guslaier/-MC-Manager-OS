@@ -1,0 +1,23 @@
+{
+  "name": "@mcm/server",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "setup:linux": "tsx setup-linux.ts",
+    "dev": "tsx watch index.ts",
+    "start": "tsx watch index.ts",
+    "compile": "bun build --compile --target=bun --outfile dist/mcm-server index.ts",
+    "compile:linux": "bun build --compile --target=bun-linux-x64 --outfile dist/mcm-server-linux index.ts"
+  },
+  "dependencies": {
+    "@mcm/contracts": "*",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^24.10.0",
+    "tsx": "^4.19.2"
+  }
+}

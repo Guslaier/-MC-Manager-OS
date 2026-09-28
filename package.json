@@ -1,0 +1,26 @@
+{
+  "name": "mc-manager-os",
+  "private": true,
+  "version": "0.0.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && npm run build --workspace apps/web",
+    "dev:server": "npm run dev --workspace apps/server",
+    "dev:web": "npm run dev --workspace apps/web",
+    "start": "npm run dev --workspace apps/server",
+    "migrate": "tsx apps/server/migration.ts",
+    "migrate:apply": "tsx apps/server/migration.ts --apply",
+    "package:server": "npm run compile --workspace apps/server",
+    "setup:linux": "npm run setup:linux --workspace apps/server --",
+    "package:server:linux": "npm run compile:linux --workspace apps/server",
+    "check:linux-path-guard": "node .roo_lab/check-linux-path-guard.mjs",
+    "verify:paper": "node .roo_lab/verify-paper.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+.roo_lab/
+.env
+.env.windows
+.env.linux
+!.env.example
+!.env.windows.example
+!.env.linux.example
